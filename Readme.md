@@ -1,7 +1,7 @@
 # Проект «Большое путешествие»
 
-* Студент: [Олег Добровольский](https://up.htmlacademy.ru/ecmascript/23/user/2368527).
-* Наставник: `Неизвестно`.
+- Студент: [Олег Добровольский](https://up.htmlacademy.ru/ecmascript/23/user/2368527).
+- Наставник: [Артем Именин](https://htmlacademy.ru/profile/aimenin).
 
 ---
 

@@ -1,23 +1,18 @@
 import { createElement } from '../render';
+import { capitaliseFirstLetter } from '../utils';
 
-const createFiltersTemplate = () => `
-<form class="trip-filters" action="#" method="get">
-      <div class="trip-filters__filter">
-        <input id="filter-everything" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="everything">
-        <label class="trip-filters__filter-label" for="filter-everything">Everything</label>
-      </div>
-      <div class="trip-filters__filter">
-        <input id="filter-future" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="future">
-        <label class="trip-filters__filter-label" for="filter-future">Future</label>
-      </div>
-      <div class="trip-filters__filter">
-        <input id="filter-present" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="present">
-        <label class="trip-filters__filter-label" for="filter-present">Present</label>
-      </div>
-      <div class="trip-filters__filter">
-        <input id="filter-past" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="past" checked>
-        <label class="trip-filters__filter-label" for="filter-past">Past</label>
-      </div>
+const FILTERS = ['everything', 'future', 'present', 'past'];
+
+const createFilterItemTemplate = (filter) =>
+  `<div class="trip-filters__filter">
+    <input id="filter-${filter}" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="${filter}">
+    <label class="trip-filters__filter-label" for="filter-everything">
+    ${capitaliseFirstLetter(filter)}</label>
+  </div>`;
+
+const createFiltersTemplate = () =>
+  `<form class="trip-filters" action="#" method="get">
+      ${FILTERS.map(createFilterItemTemplate).join('')}
       <button class="visually-hidden" type="submit">Accept filter</button>
     </form>`;
 

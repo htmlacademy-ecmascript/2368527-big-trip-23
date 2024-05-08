@@ -89,6 +89,6 @@ const mockOffers = [
 ];
 
 const getOffersByType = (waypointType) =>
-  mockOffers.find(({ type }) => type === waypointType)?.offers || [];
+  mockOffers.find(({ type }) => type === waypointType).offers;
 
 export { getOffersByType };

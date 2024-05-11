@@ -1,9 +1,8 @@
-import { createElement } from '../render';
-
-const createSortTemplate = () => `
-    <form class="trip-events__trip-sort  trip-sort" action="#" method="get">
+import { createElement } from '../render.js';
+function createSortTemplate() {
+  return `<form class="trip-events__trip-sort  trip-sort" action="#" method="get">
       <div class="trip-sort__item  trip-sort__item--day">
-        <input id="sort-day" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-day">
+        <input id="sort-day" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-day" checked>
         <label class="trip-sort__btn" for="sort-day">Day</label>
       </div>
       <div class="trip-sort__item  trip-sort__item--event">
@@ -15,7 +14,7 @@ const createSortTemplate = () => `
         <label class="trip-sort__btn" for="sort-time">Time</label>
       </div>
       <div class="trip-sort__item  trip-sort__item--price">
-        <input id="sort-price" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-price" checked>
+        <input id="sort-price" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-price">
         <label class="trip-sort__btn" for="sort-price">Price</label>
       </div>
       <div class="trip-sort__item  trip-sort__item--offer">
@@ -23,8 +22,9 @@ const createSortTemplate = () => `
         <label class="trip-sort__btn" for="sort-offer">Offers</label>
       </div>
     </form>`;
+}
 
-export default class SortingView {
+export default class SortView {
   getTemplate() {
     return createSortTemplate();
   }
@@ -33,7 +33,6 @@ export default class SortingView {
     if (!this.element) {
       this.element = createElement(this.getTemplate());
     }
-
     return this.element;
   }
 

@@ -1,4 +1,4 @@
-import { render } from './render';
+import { render } from './framework/render.js';
 
 import FiltersView from './view/filters.js';
 import ListPresenter from './presenter/list-presenter.js';
@@ -9,7 +9,7 @@ const siteTripEventsElement = document.querySelector('.trip-events');
 
 const pointsModel = new PointsModel();
 const presenter = new ListPresenter({
-  countainer: siteTripEventsElement,
+  container: siteTripEventsElement,
   pointsModel,
 });
 

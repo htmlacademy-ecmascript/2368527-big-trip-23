@@ -1,4 +1,4 @@
-import { createElement } from '../render.js';
+import AbstractVeiw from '../framework/view/abstract-view.js';
 function createFiltersTemplate() {
   return `<div class="trip-main__trip-controls  trip-controls">
       <div class="trip-controls__filters">
@@ -26,19 +26,8 @@ function createFiltersTemplate() {
     </div>`;
 }
 
-export default class FiltersView {
-  getTemplate() {
+export default class FiltersView extends AbstractVeiw {
+  get template() {
     return createFiltersTemplate();
-  }
-
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
-    }
-    return this.element;
-  }
-
-  removeElement() {
-    this.element = null;
   }
 }

@@ -58,7 +58,6 @@ export default class PointPresenter {
 
     if (prevPointComponent === null || prevFormEditComponent === null) {
       render(this.#pointComponent, this.#pointListContainer);
-      // console.log(this.#pointComponent);
       return;
     }
 

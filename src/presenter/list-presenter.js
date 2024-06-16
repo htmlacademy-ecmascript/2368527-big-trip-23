@@ -38,10 +38,15 @@ export default class ListPresenter {
   }
 
   #renderSort() {
-    this.#sortView = new SortView({
+    this.#sortComponent = new SortView({
       onSortTypeChange: this.#handleSortTypeChange,
     });
-    render(this.#sortView, this.#container);
+
+    render(
+      this.#sortPointDay,
+      this.#boardComponent.element,
+      RenderPosition.AFTERBEGIN
+    );
   }
 
   #renderPoints(from, to) {

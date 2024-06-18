@@ -17,8 +17,10 @@ const FilterType = {
 };
 const SortType = {
   DAY: 'day',
+  EVENT: 'event',
   TIME: 'time',
   PRICE: 'price',
+  OFFERS: 'offers',
 };
 
 export { POINT_TYPES, FilterType, SortType };

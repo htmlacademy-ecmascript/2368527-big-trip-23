@@ -1,4 +1,4 @@
-import { render } from '../framework/render.js';
+import { RenderPosition, render } from '../framework/render.js';
 import SortView from '../view/sort';
 import PointListView from '../view/point-list.js';
 import NoPointView from '../view/no-point.js';
@@ -38,15 +38,11 @@ export default class ListPresenter {
   }
 
   #renderSort() {
-    this.#sortComponent = new SortView({
+    this.#sortView = new SortView({
       onSortTypeChange: this.#handleSortTypeChange,
     });
 
-    render(
-      this.#sortPointDay,
-      this.#boardComponent.element,
-      RenderPosition.AFTERBEGIN
-    );
+    render(this.#sortView, this.#container, RenderPosition.AFTERBEGIN);
   }
 
   #renderPoints(from, to) {
